@@ -18,7 +18,7 @@ DRP let you create a subdomain per customer, project, anything you want by simpl
 
 ### Subdomains registration
 
-1) Create a new DNS record with a wildcard as subdomain: *.exemple.com and point it to where DynamicReverseProxy is listening
+1) Create a new DNS record with a wildcard as subdomain like this `*.exemple.com` and point it where DynamicReverseProxy is listening
 
 2) To register a new subdomain use this endpoint:
 
