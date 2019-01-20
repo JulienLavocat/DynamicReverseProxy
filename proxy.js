@@ -19,6 +19,10 @@ proxy.on("error", (err, req, res, target) => {
 
 var server = http.createServer(function (req, res) {
 
+    //TODO: check if host has no subdomain
+    //Has subdomain -> redirect from redis
+    //Hasn't subdomain -> process as api requests
+
     get(req.headers.host).then((value) => {
 
         if(!value)
@@ -35,5 +39,5 @@ async function get(host) {
     return await getAsync(prefix + host);
 }
 
-console.log("listening on port " + cfg.drp_port)
+console.log("Reverse proxy up and running on port " + cfg.drp_port)
 server.listen(cfg.drp_port);
