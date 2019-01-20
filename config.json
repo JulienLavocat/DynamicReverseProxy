@@ -1,4 +1,8 @@
 {
     "redis_host": "localhost",
-    "redis_port": 6379
+    "redis_port": 6379,
+    "redis_prefix": "drp",
+    "letsencrypt": true,
+    "drp_port": 80,
+    "drp_fallback": "http://localhost:8080"
 }
