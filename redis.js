@@ -1,16 +1,22 @@
 const redis = require("redis");
+
 var client;
 
 module.exports = 
 class Redis {
 
     static connect(host, port, errorCallback) {
+        if(client)
+            client.quit();
+
         client = redis.createClient(port, host);
         client.on("error", errorCallback);
     }
 
     static get(key) {
-        return client.get(key, (err, value) => {if(err) throw err; return value;});
+        client.get(key, (err, reply) => {
+            return reply;
+        });
     }
 
     static set(key, value) {
